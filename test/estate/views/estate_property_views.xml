@@ -54,8 +54,8 @@
             <field name = "arch" type = "xml">
                 <form string = "Property">
                     <header>
-                        <button name = "action_property_sold" type = "object" states = "New,Offer Received,Offer Accpeted" string = "Sold"/>
-                        <button name = "action_property_canceled" type = "object" states = "New,Offer Received,Offer Accpeted" string = "Canceled"/>
+                        <button name = "action_property_sold" type = "object" states = "New,Offer Received,Offer Accepted" string = "Sold"/>
+                        <button name = "action_property_canceled" type = "object" states = "New,Offer Received,Offer Accepted" string = "Canceled"/>
 
                         <field name = "state" widget = "statusbar"/>
                     </header>
