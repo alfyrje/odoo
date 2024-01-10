@@ -2,7 +2,7 @@
     'name': 'estate',
     'license': 'LGPL-3',
     'depends': [
-        'base',    
+        'base', 
     ],
     'data': [
         'security/ir.model.access.csv',
