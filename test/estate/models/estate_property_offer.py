@@ -41,3 +41,8 @@ class EstatePropertyOffer(models.Model):
         for record in self:
             if record.status != 'Accepted':
                 record.status = 'Refused'
+
+    @api.model
+    def create(self, vals):
+        self.env['estate.property'].browse(vals['property_id']).set_state_offer_received()
+        return super().create(vals)

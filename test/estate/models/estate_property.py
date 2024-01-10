@@ -79,3 +79,13 @@ class EstateProperties(models.Model):
             if not float_is_zero(record.selling_price, 2):
                 if record.selling_price < record.expected_price * 0.9:
                     raise ValidationError('The selling price cannot be lower than 90% of the expected price.')
+                
+    @api.ondelete(at_uninstall=False)
+    def _prevent_deletion(self):
+        for record in self:
+            if not record.state == 'New' or record.state == 'Canceled':
+                raise UserError('???')
+            
+    def set_state_offer_received(self):
+        for record in self:
+            record.state = 'Offer Received'
