@@ -40,6 +40,9 @@
                             <page string = "Parse function">
                                 <field name = "parse_func" widget = "ace"/>
                             </page>
+                            <page string = "Requests">
+                                <field name = "request_ids"/>
+                            </page>
                         </notebook>
                     </sheet>
                 </form>

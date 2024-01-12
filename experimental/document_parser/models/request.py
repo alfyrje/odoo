@@ -10,7 +10,7 @@ class Request(models.Model):
     request_content = fields.Text()
     return_content = fields.Text()
     client_id = fields.Many2one('parser.client')
-    processed_by = fields.Many2one('parser.parser')
+    parser_id = fields.Many2one('parser.parser')
 
     def action_process_request(self):
         for record in self:
@@ -29,11 +29,15 @@ class Request(models.Model):
                             return_value = localdict['result']
                             if return_value is not None and return_value is True:
                                 record.return_content = 'Detected ' + parser.name
-                                record.processed_by = parser
+                                record.parser_id = parser
                                 detected = True
+                                record.action_parse_request(self)
                                 break
                         except Exception as e:
                             record.return_content = f'Error executing detect function for {parser.name}: {e}'
             if not detected: record.return_content = 'Unable to detect'
 
-        
+    def action_parse_request(self):
+        for record in self:
+            parse_func_code = record.parser_id.parse_func
+            
