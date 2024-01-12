@@ -1,0 +1,57 @@
+<?xml version="1.0"?>
+
+<odoo>
+    <data>
+        <record id="request_action" model="ir.actions.act_window">
+            <field name="name">Requests</field>
+            <field name="res_model">parser.request</field>
+            <field name="view_mode">tree,form</field>
+        </record>
+        
+        <record id = "request_view_tree" model = "ir.ui.view">
+            <field name = "name">request.view.tree</field>
+            <field name = "model">parser.request</field>
+            <field name = "arch" type = "xml">
+                <tree string = "Requests">
+                    <field name = "IP_address" string = "IP Address"/>
+                    <field name = "request_time"/>
+                    <field name = "return_content"/>
+                </tree>
+            </field>
+        </record>
+
+        <record id = "request_view_form" model = "ir.ui.view">
+            <field name = "name">request.view.form</field>
+            <field name = "model">parser.request</field>
+            <field name = "arch" type = "xml">
+                <form string = "Request">
+                    <header>
+                        <button name = "action_process_request" type = "object" string = "Process"/>
+                    </header>
+                    <sheet>
+                        <h1>
+                            Client request
+                            <separator/>
+                        </h1>
+                        <group>
+                            <field string = "IP Address" name = "IP_address"/>
+                        </group>
+                        <group>
+                            <field name = "request_time"/>
+                        </group>
+                        <notebook>
+                            <page string = "Request">
+                                <group>
+                                    <field name = "request_content" widget = "ace"/>
+                                </group>
+                                <group>
+                                    <field name = "return_content" widget = "ace"/>
+                                </group>
+                            </page>
+                        </notebook>
+                    </sheet>
+                </form>
+            </field>
+        </record>
+    </data>
+</odoo>

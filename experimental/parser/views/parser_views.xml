@@ -33,6 +33,14 @@
                         <group>
                             <field name = "parse_method"/>
                         </group>
+                        <notebook string = "Python" attrs = "{'invisible': [('parse_method','!=','Python')]}">
+                            <page string = "Detect function">
+                                <field name = "detect_func" widget = "ace"/>
+                            </page>
+                            <page string = "Parse function">
+                                <field name = "parse_func" widget = "ace"/>
+                            </page>
+                        </notebook>
                     </sheet>
                 </form>
             </field>

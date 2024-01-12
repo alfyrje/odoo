@@ -1,9 +1,15 @@
 <?xml version="1.0"?>
 <odoo>
     <data>
-        <menuitem id="parser_menu_root" name="Parser" web_icon="parser,static/description/parser.png">
+        <menuitem id="parser_menu_root" name="Document Parsing" web_icon="parser,static/description/parser.png">
             <menuitem id="parser_menu_first_level" name="Parsers">
                 <menuitem id="parser_menu_action" name="Parsers" action="parser_action"/>
+            </menuitem>
+            <menuitem id="client_menu_first_level" name="Clients">
+                <menuitem id="client_menu_action" name="Clients" action="client_action"/>
+            </menuitem>
+            <menuitem id="request_menu_first_level" name="Requests">
+                <menuitem id="request_menu_action" name="Requests" action="request_action"/>
             </menuitem>
         </menuitem>
     </data>

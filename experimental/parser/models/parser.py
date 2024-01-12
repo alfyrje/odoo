@@ -6,3 +6,7 @@ class Parser(models.Model):
 
     name = fields.Char(required = True)
     parse_method = fields.Selection([('Python', 'Python'), ('AI', 'AI')], default = 'Python', required = True)
+    detect_func = fields.Text()
+    parse_func = fields.Text()
+
+    

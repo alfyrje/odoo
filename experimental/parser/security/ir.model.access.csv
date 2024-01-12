@@ -1,2 +1,4 @@
 id,name,model_id/id,group_id/id,perm_read,perm_write,perm_create,perm_unlink
 access_parser_parser,access_parser_parser,model_parser_parser,base.group_user,1,1,1,1
+access_parser_client,access_parser_client,model_parser_client,base.group_user,1,1,1,1
+access_parser_request,access_parser_request,model_parser_request,base.group_user,1,1,1,1
