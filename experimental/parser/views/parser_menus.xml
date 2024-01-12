@@ -1,0 +1,10 @@
+<?xml version="1.0"?>
+<odoo>
+    <data>
+        <menuitem id="parser_menu_root" name="Parser" web_icon="parser,static/description/parser.png">
+            <menuitem id="parser_menu_first_level" name="Parsers">
+                <menuitem id="parser_menu_action" name="Parsers" action="parser_action"/>
+            </menuitem>
+        </menuitem>
+    </data>
+</odoo>
